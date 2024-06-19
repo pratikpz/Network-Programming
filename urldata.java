@@ -9,7 +9,7 @@ public class urldata {
 			InputStream in = u.openStream();
 			int c;
 			while ((c = in.read()) != -1)
-				System.out.write(c);
+				System.out.write(c) ;// write() method is used to write the specified byte to the output stream.
 			in.close();
 
 		} catch (IOException e) {
