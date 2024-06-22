@@ -10,11 +10,16 @@ public class IPCharateristics {
 		try {
 			InetAddress address = InetAddress.getByName(Domain);
 
+			if (address.isMulticastAddress()) {
+				System.out.println(address + " is a  multicast address.");
+			
+				}
+
 			if (address.isAnyLocalAddress()) {
 				System.out.println(address + "is a wildcard address.");
 			}
 
-			if (address.isAnyLocalAddress()) {
+			if (address.isLoopbackAddress()) {
 				System.out.println(address + "is loopback address.");
 			}
 
@@ -25,26 +30,10 @@ public class IPCharateristics {
 			} else {
 				System.out.println(address + " is a global address.");
 			}
-			if (address.isMulticastAddress()) {
-				if (address.isMCGlobal()) {
-					System.out.println(address + " is a global multicast address.");
-				} else if (address.isMCOrgLocal()) {
-					System.out.println(address
-							+ " is an organization wide multicast address.");
-				} else if (address.isMCSiteLocal()) {
-					System.out.println(address + " is a site wide multicast address.");
-				} else if (address.isMCLinkLocal()) {
-					System.out.println(address + " is a subnet wide multicast address.");
-				} else if (address.isMCNodeLocal()) {
-					System.out.println(address + " is an interface-local multicast address.");
-				} else {
-					System.out.println(address + " is an unknown multicast address type.");
-				}
-			} else {
-				System.out.println(address + " is a unicast address.");
-			}
+			
+			} 
 
-		} catch (UnknownHostException ex) {
+		 catch (UnknownHostException ex) {
 			System.err.println("Could not resolve " + args[0]);
 		}
 	}
