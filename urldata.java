@@ -17,3 +17,35 @@ public class urldata {
 		}
 	}
 }
+
+
+
+/*
+ * import java.io.*;
+import java.net.*;
+
+public class URLDataRetriever {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java URLDataRetriever <url>");
+            return;
+        }
+
+        String urlString = args[0];
+        try {
+            URL url = new URL(urlString);
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+            }
+        } catch (MalformedURLException e) {
+            System.out.println("Invalid URL: " + urlString);
+        } catch (IOException e) {
+            System.out.println("Error reading from URL: " + e.getMessage());
+        }
+    }
+}
+
+ */
