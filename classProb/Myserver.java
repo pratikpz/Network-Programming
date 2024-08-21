@@ -9,7 +9,14 @@ public class Myserver {
 			DataInputStream dis = new DataInputStream(s.getInputStream());
 			String str = (String) dis.readUTF();
 			System.out.println("message= " + str);
+			
+			DataOutputStream ds = new DataOutputStream(s.getOutputStream());
+			ds.writeUTF("Hello client i received your message");
+
+			ds.flush();
+			ds.close();
 			ss.close();
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
