@@ -4,7 +4,7 @@ import java.net.URL;
 
 public class ReadHeaders {
     public static void main(String[] args) {
-        String urlString = "https://www.example.com"; // Replace with the desired URL
+        String urlString = "https://www.example.com"; 
         
         try {
             URL url = new URL(urlString);
@@ -23,7 +23,6 @@ public class ReadHeaders {
                 i++;
             }
 
-            // Close the connection
             connection.disconnect();
 
         } catch (Exception e) {
