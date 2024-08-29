@@ -9,10 +9,15 @@ public class test2 {
 			ServerSocket ss = new ServerSocket(6000);
 			Socket s = ss.accept();
 			DataInputStream dt = new DataInputStream(s.getInputStream());
-			String st = (String) dt.readUTF();
+			String st =  dt.readUTF();
 			System.out.println("Message is :::::  "+st);
 
+			DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+			dout.writeUTF("Hello client i sent a message");
+
 			dt.close();
+			dout.close();
+
 			s.close();
 			ss.close();
 		} catch (Exception e) {

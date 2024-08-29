@@ -30,3 +30,5 @@ public class ReadHeaders {
         }
     }
 }
+
+// i am preparing for my exam and i want to cover all these as quick as possible...can you create the question most likely to come in exam...and also a common program which can be used as solution of multiple question. like mention those common question and give one solution. but for the problems totally unrelated to each other do it separately
